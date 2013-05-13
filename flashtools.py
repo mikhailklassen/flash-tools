@@ -14,7 +14,8 @@ def read_sinks_evol(sinks_evol_file):
     for i in range(ncols):
         k = headers[i]
         a[k] = data[1:,i]
-
+    
+    f.close()
     return a
 
 def hosokawa_radius(mass,accretionrate):
