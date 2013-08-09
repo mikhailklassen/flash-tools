@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from toolbox import *
+from flash_generic.toolbox import *
 
 def strictly_increasing(x):
     dx = np.diff(x)

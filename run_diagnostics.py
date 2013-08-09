@@ -13,7 +13,7 @@ import os
 import cPickle as pickle
 import glob
 import numpy as np
-from toolbox import *
+from flash_generic.toolbox import *
 import subprocess as sub
 
 # Determine directory paths
@@ -133,7 +133,7 @@ if not os.path.exists(outdir):
 print 'Created {0}.\n'.format(outdir)
 
 # Copy output files
-summary_template = srcdir+'/summary_template.tex'
+summary_template = srcdir+'/templates/summary_template.tex'
 summary_filename = 'summary.tex'
 summary_file = outdir+'/'+summary_filename
 print 'Copying from '+summary_template+' to '+summary_file
@@ -237,13 +237,13 @@ sed_replace('@CFL',cfl)
 
 ## SIMULATION OUTCOMES
 print 'Processing log file.'
-from process_log_file import *
+from flash_2.process_log_file import *
 logfile = datadir+'/'+pf.parameters["log_file"]
 loginfo = process_log_file(logfile)
 print 'Done.\n'
 
 print 'Processing sinks_evol.dat'
-from process_sinks_evol import *
+from flash_2.process_sinks_evol import *
 sinks_info = process_sinks_evol(datadir+'/sinks_evol.dat',outdir)
 print 'Done.\n'
 
