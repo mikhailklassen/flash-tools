@@ -1,0 +1,105 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{epsfig}
+\usepackage{framed}
+
+\newcommand{\Msun}{M_\odot}
+\newcommand{\Lsun}{L_\odot}
+\newcommand{\Rsun}{R_\odot}
+\begin{document}
+
+\begin{table*}
+\centering
+\caption{Physical simulation parameters}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill} } lcc}
+\hline
+Parameter & & Value \\
+\hline
+cloud radius     & $R_0$ &  @CLOUDRADCM   cm   \\
+                 &       &  @CLOUDRADAU   AU   \\
+                 &       &  @CLOUDRADPC   pc   \\
+total cloud mass & $M_{\textrm{tot}}$ & @TOTCLOUDMASS  $\Msun$ \\
+mean mass density & $\langle \rho \rangle$ & @MEANMASSDENS  g/cm$^3$ \\
+mean number density & $\langle n \rangle$ &  @MEANNUMDENS  cm$^{-3}$\\
+mean molecular weight & $\mu$ &  @MUMOL   \\
+temperature & $T$ &  @TEMPERATURE  K \\
+sound speed & $c_{\textrm{s}}$ &  @SOUNDSPEED  cm/s \\
+rms Mach number & $\mathcal{M}$ & @MACHNUMBER   \\
+turbulent power index, $E_k \propto k^{-p}$ & $p$ & @TURBPOWER   \\
+%turbulent field type & sol/comp/ran/mix &  @TURBTYPE    \\
+mean freefall time      & $t_{\textrm{ff}}$ &  @FREEFALLTIME yr \\
+sound crossing time     & $t_{\textrm{sc}}$ &  @SOUNDCROSSTIME yr \\
+turbulent crossing time & $t_{\textrm{tc}}$ &  @TURBCROSSTIME yr \\
+Jeans length & $\lambda_{\textrm{J}}$ &  @JEANSLENGTH AU \\
+Jeans volume & $V_{\textrm{J}}$       &  @JEANSVOLUME AU$^3$\\
+Jeans mass   & $M_{\textrm{J}}$       &  @JEANSMASS   $\Msun$ \\
+magnetic field flux density & $\Phi$  &  @MAGFIELD  $\mu$G\\
+Alfv\'{e}n speed & $v_A$ & @ALFVENSPEED cm/s \\
+Alfv\'{e}n time  & $\tau_A$ & @ALFVENTIME yr \\
+mass-to-flux ratio & $\left(\tfrac{M}{\Phi}\right)/\left(\tfrac{M}{\Phi}\right)_{\textrm{crit}}$ & @MASSTOFLUX  \\
+rigid rotation angular frequency & $\Omega_{\textrm{rot}}$ & @RIGIDOMEGA rad/s \\
+rotational energy fraction & $\beta_{\textrm{rot}}$ & @ROTENERGYFRAC \% \\
+\hline \\
+\end{tabular*}
+\end{table*}
+
+\begin{table*}
+\centering
+\caption{Numerical simulation parameters}
+\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill} } lcc}
+\hline
+Parameter & & Value \\
+\hline
+simulation box size      & $L_{\textrm{box}}$ & @BOXSIZECM   cm \\
+                         &                    & @BOXSIZEAU   AU \\
+                         &                    & @BOXSIZEPC   pc \\
+simulation box volume  & $V_{\textrm{box}}$ & @BOXVOLUME  pc$^3$\\
+smallest cell size & $\Delta x$ & @MINGRIDSIZE  AU \\
+minimum refinement level & $l_{\textrm{ref,min}}$ & @LREFMIN \\
+maximum refinement level & $l_{\textrm{ref,max}}$ & @LREFMAX \\
+gas density ceiling& $\rho_{\textrm{max}}$ & @MAXGASDENS g/cm$^3$\\
+number density ceiling& $n_{\textrm{max}}$ & @MAXNUMDENS cm$^{-3}$\\
+sink particle accretion radius & $r_{\textrm{accr}}$ & @SINKRADACCR AU \\
+cfl & & @CFL \\
+\hline \\
+\end{tabular*}
+\end{table*}
+
+
+\begin{table*}
+\centering
+\caption{Simulation outcomes}
+\begin{tabular*}{0.95\textwidth}{@{\extracolsep{\fill} } lcc}
+\hline
+Parameter & & Value \\
+\hline
+machine info & & @MACHINEINFO \\
+number of checkpoint files & $n_{\textrm{chk}}$ & @NUMCHKFILES \\
+number of plot files & $n_{\textrm{plt}}$ & @NUMPLTFILES \\
+number of time steps & $n_{\textrm{steps}}$ & @NUMSTEPS \\
+total wallclock time & $t_{\textrm{wall}}$ & @REALTIME days \\
+total cpu hours & & @CPUHOURS hours \\
+final simulation time & $t_{\textrm{final}}$ & @FINALTIME yr \\
+final simulation timestep & $\Delta t$ & @DELTATFIN yr \\
+number of sink particles formed & $n_{\textrm{sinks}}$ & @NUMSINKS \\
+max sink mass & & @MAXSINKMASS $\Msun$ \\
+min sink mass & & @MINSINKMASS $\Msun$ \\
+mean sink mass & & @MEANSINKMASS $\Msun$ \\
+median sink mass & & @MEDIANSINKMASS $\Msun$ \\
+\hline \\
+\end{tabular*}
+\end{table*}
+
+
+
+
+
+\end{document}
