@@ -119,13 +119,7 @@ if yt_exists:
         velfile_exists = False
         print 'No velocity info file associated with this simulation.\n'
 
-# Analyse log file
-
-
-# Analyse sink particle information
-
-
-# Creat output directory
+# Create output directory
 print 'Creating output directory.'
 parameters['outdir'] = outdir
 if not os.path.exists(outdir):
