@@ -271,6 +271,9 @@ sed_replace('@MEANSINKMASS',mean_sink_mass/Msun)
 median_sink_mass = sinks_info['median_mass']
 sed_replace('@MEDIANSINKMASS',median_sink_mass/Msun)
 
+## Make a plot of the evolution of the density profile
+from flash_generic import profiles
+profiles.density_profile_1D_evolution(pltfiles[0:2],outdir)
 
 ## COMPILE SUMMARY.TEX
 print 'Compiling diagnostic summary file.'
@@ -279,10 +282,6 @@ pdflatex = sub.Popen(['pdflatex',summary_filename],stdout=sub.PIPE,stderr=sub.PI
 output, errors = pdflatex.communicate()
 print errors
 pdflatex.stdout.close()
-
-
-
-
 
 
 # Get the radial profile

@@ -26,6 +26,23 @@ avogadro        = 6.0221367360000E+23 # Avogadro's constant
 gas_constant    = 8.3145119843000E+07 # Ideal gas constant in cm^2 s^-2 K^-1
 wien            = 2.8977562400000E-01 # Wien's constant in cm K
 
+def select_scale(length):
+    '''
+    Chooses an "optimal" scale for plotting purposes, i.e. should the distance axis
+    be in units of cm, solar radii, AU, pc, kpc, Mpc, etc.
+    '''
+    scale = 'cm'
+    if length/Rsun > 0.001:
+        scale = 'Rsun'
+    if length/Rsun > 1000.0:
+        scale = 'AU'
+    if length/AU > 10000.0:
+        scale = 'pc'
+    if length/pc > 1000.0:
+        scale = 'kpc'
+    if length/pc > 1.e6:
+        scale = 'Mpc'
+    return scale
 
 def get_times(files):
     '''
